@@ -1,5 +1,7 @@
 <div class="menu">
-  <ul class="collection-item">
-    <li></li>
+  <ul>
+    <li *ngFor="let section of sections" class="collection-item">
+      <fa-icon class="icon-gradient" [icon]="section.icon"></fa-icon>
+    </li>
   </ul>
 </div>
