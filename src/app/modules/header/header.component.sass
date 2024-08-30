@@ -22,6 +22,17 @@
   100%
     background-size: 100% 100%
 
+@mixin responsive($breakpoint)
+  @if $breakpoint == 'tablet'
+    @media (max-width: 991px)
+      @content
+
+  @else if $breakpoint == 'mobile'
+    @media (max-width: 480px)
+      @content
+
+
+
 .hero-banner
   position: relative
   height: 450px
@@ -35,7 +46,7 @@
   left: 0
   width: 100%
   height: 100%
-  background-image: radial-gradient(circle at 52% 73%, rgb(242, 99, 219) 0px, transparent 50%), radial-gradient(circle at 0% 30%, rgb(139, 218, 249) 0px, transparent 50%), radial-gradient(circle at 41% 26%, rgb(114, 126, 238) 0px, transparent 50%), radial-gradient(circle at 41% 51%, rgb(227, 185, 95) 0px, transparent 50%), radial-gradient(circle at 41% 88%, rgb(238, 172, 73) 0px, transparent 50%), radial-gradient(circle at 76% 73%, rgb(231, 126, 150) 0px, transparent 50%), radial-gradient(circle at 29% 37%, rgb(169, 75, 251) 0px, transparent 50%)
+  background-image: radial-gradient(circle at 52% 73%, rgb(182, 59, 161) 0px, transparent 50%), radial-gradient(circle at 0% 30%, rgb(108, 198, 218) 0px, transparent 50%), radial-gradient(circle at 41% 26%, rgb(76, 86, 176) 0px, transparent 50%), radial-gradient(circle at 41% 51%, rgb(255, 255, 255) 0px, transparent 50%), radial-gradient(circle at 41% 88%, rgb(10, 179, 201) 0px, transparent 50%), radial-gradient(circle at 76% 73%, rgb(138, 53, 184) 0px, transparent 50%), radial-gradient(circle at 29% 37%, rgb(169, 75, 251) 0px, transparent 50%)
   background-size: 150% 150%
   filter: blur(40px)
   animation: moveBackground 10s linear infinite
@@ -50,15 +61,23 @@
   padding: 0px 25px
 
 .about-me
-  height: 70%
+  max-height: 85%
   width: 53%
   background-color: rgba(89, 0, 255, 0.3)
   border-radius: 5px
   padding: 20px
   color: white
 
-  h6
-    margin: 25px 0px
+  @include responsive('tablet')
+   width: 100%
+   margin-right: 8px
+
+h6
+  margin: 25px 0px
+  display: flex
+
+  @include responsive('mobile')
+   display: none
 
 .buttons-section
   width: 100%
@@ -72,8 +91,9 @@
     border: 2px solid white
     color: white
     padding: 5px 15px
-    height: 45px
+    height: 40px
     margin: 20px 0px
+    font-size: 15px
 
 
   .fa-brands

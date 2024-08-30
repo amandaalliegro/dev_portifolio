@@ -1,6 +1,18 @@
+@mixin responsive($breakpoint)
+  @if $breakpoint == 'tablet'
+    @media (max-width: 991px)
+      @content
+
+  @else if $breakpoint == 'mobile'
+    @media (max-width: 480px)
+      @content
+
 .container-wrap
-  padding: 15px
-  background-color: #616161
+  padding: 0  0 15px 15px
+  background-color: #484848
+
+  @include responsive('tablet')
+  padding: 0
 
 .row
   display: flex

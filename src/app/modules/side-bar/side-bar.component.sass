@@ -2,6 +2,15 @@ $gradient-start: #D500FF
 $gradient-end: #00CDFF
 $gradient: linear-gradient(120deg, $gradient-start, $gradient-end)
 
+@mixin responsive($breakpoint)
+  @if $breakpoint == 'tablet'
+    @media (max-width: 991px)
+      @content
+
+  @else if $breakpoint == 'mobile'
+    @media (max-width: 480px)
+      @content
+
 .menu
   width: 80px
   border-radius: 20px
@@ -9,12 +18,21 @@ $gradient: linear-gradient(120deg, $gradient-start, $gradient-end)
   padding: 4px
   margin-top: 15px
 
+  @include responsive('tablet')
+    width: 100%
+    margin-top: 0px
+    border-radius: 0
+
 .menu ul
   list-style-type: none
   margin: 15px
   margin-block: 0
   padding-inline: 0
   text-align: center
+
+  @include responsive('tablet')
+    display: flex
+    justify-content: space-around
 
 .collection-item
   padding: 12px 0

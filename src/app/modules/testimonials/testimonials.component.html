@@ -1,0 +1,11 @@
+<div class="testimonials row">
+  <app-testimonials-card
+    *ngFor="let testimonial of testimonials"
+    class="col-lg-4 testimonial-card"
+    [name]="testimonial.name"
+    [job]="testimonial.job"
+    [date]="testimonial.date"
+    [company]="testimonial.company"
+    [text]="testimonial.text"
+  ></app-testimonials-card>
+</div>
