@@ -1,9 +1,17 @@
-<div class="testimonial-card">
-  <div class="profile-picture">
+<div class="testimonial-card" [class.expanded]="isExpanded">
+  <div class="pic-text-header">
+    <div class="text-header">
+      <h4>{{ name }}</h4>
+      <h6>{{ job }} at {{ company }}</h6>
+      <h6>{{ date }}</h6>
+    </div>
+    <div class="profile-picture">
+      <img class="testimonial-picture" src="{{ picture }}">
+    </div>
   </div>
-  <h3>{{ name }}</h3>
-  <h4>{{ job }} at {{ company }}</h4>
-  <h6>{{ date }}</h6>
   <hr>
-  <p>{{ text }}</p>
+  <div class="text-box">
+    <p>{{ isExpanded? text : best }}</p>
+    <i class="fa-solid fa-plus" (click)="toggleExpand()"></i>
+  </div>
 </div>

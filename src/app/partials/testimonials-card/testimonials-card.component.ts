@@ -11,4 +11,17 @@ export class TestimonialsCardComponent {
   @Input() job: string = '';
   @Input() company: string = '';
   @Input() text: string = '';
+  @Input() best: string = '';
+  @Input() picture: string = '';
+
+  isExpanded: boolean = false;
+
+  constructor() {
+
+  }
+
+  toggleExpand() {
+    this.isExpanded = !this.isExpanded;
+  }
+
 }

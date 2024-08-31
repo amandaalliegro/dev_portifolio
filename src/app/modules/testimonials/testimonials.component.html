@@ -1,4 +1,5 @@
 <div class="testimonials row">
+  <h3>Words from Colleagues</h3>
   <app-testimonials-card
     *ngFor="let testimonial of testimonials"
     class="col-lg-4 testimonial-card"
@@ -7,5 +8,10 @@
     [date]="testimonial.date"
     [company]="testimonial.company"
     [text]="testimonial.text"
+    [best]="testimonial.best"
+    [picture]="testimonial.picture"
   ></app-testimonials-card>
+</div>
+<div class="hire">
+  <button>HIRE ME</button>
 </div>
