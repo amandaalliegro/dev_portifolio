@@ -1,3 +1,57 @@
 <div class="profile">
   <img src="https://media.licdn.com/dms/image/v2/D5603AQHB5_TXiARnug/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711382053739?e=1730332800&v=beta&t=HEumviXocfBiH0aOOPGDQf_ibuZBBskJ2yHKJg4ETs0">
 </div>
+<div class="two-columns">
+  <div class="column-left">
+    <h1>
+      <span>A</span><span>M</span><span>A</span><span>N</span><span>D</span><span>A</span>
+      <span class="bolder">A</span><span class="bolder">R</span><span class="bolder">N</span><span class="bolder">A</span><span class="bolder">U</span><span class="bolder">T</span>
+    </h1>
+  </div>
+  <div class="column-right">
+    <div class="first-class">
+      <div  class="front">
+        <h3>Frontend Development</h3>
+        <ul *ngFor="let frontStack of frontStacks">
+          <li>{{ frontStack.stack }}</li>
+          <div class="bar-border">
+            <div class="bar" [style.width]="frontStack.bar"></div>
+          </div>
+        </ul>
+        <h3>Backend Development</h3>
+        <ul *ngFor="let backStack of backStacks">
+          <li>{{ backStack.stack }}</li>
+          <div class="bar-border">
+            <div class="bar" [style.width]="backStack.bar" ></div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <div class="second-class">
+      <h3>Data Visualization</h3>
+        <ul>
+          <li>Apache ECharts</li>
+        </ul>
+      <h3>Real-time Applications</h3>
+      <ul>
+        <li>Sockets</li>
+      </ul>
+      <h3>Version Control</h3>
+      <ul>
+        <li>Git/GitHub</li>
+      </ul>
+      <h3>Project Management & Agile Development:</h3>
+      <ul>
+        <li>Jira, Scrum, Agile</li>
+      </ul>
+      <h3>UI/UX Design/ Graphic Design:</h3>
+      <ul>
+        <li>Figma</li>
+        <li>Adobe Illustrator</li>
+        <li>Adobe InDesign</li>
+      </ul>
+    </div>
+    <!-- Content for the second column goes here -->
+  </div>
+</div>
+

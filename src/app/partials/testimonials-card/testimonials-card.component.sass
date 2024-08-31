@@ -20,19 +20,19 @@
   max-width: 100%
   min-height: 300px
   position: relative // Create a positioning context for the .fa-plus icon
-  transition: height 0.6s ease, z-index 0.6s ease, top 0.6s ease, left 0.6s ease
-  z-index: 1 // Default z-index
-
+  transition: height 0.3s ease, top 0.3s ease, left 0.3s ease
+  z-index: 4 // Default z-index
 
   &.expanded
+    z-index: 10 // Bring the card to the front immediately
     position: fixed
     top: 50%
     left: 50%
     width: 50%
     transform: translate(-50%, -50%) // Center the card on the screen
-    // height: 80vh // Expand the height
-    z-index: 10 // Bring the card to the front
+    transition: z-index 0s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease // Separate z-index transition
     background: linear-gradient(to right, rgba(89, 0, 255), rgb(154, 153, 244))
+
 
 .pic-text-header
   display: flex
