@@ -1,15 +1,15 @@
 <div class="container-wrap">
   <div class="row">
     <div class="pa-0 col-lg-1">
-      <app-side-bar></app-side-bar>
+      <app-side-bar (navigateTo)="onNavigate($event)"></app-side-bar>
     </div>
     <div class="pa-0 col-lg-11">
-      <app-header></app-header>
+      <app-header id="header"></app-header>
     </div>
   </div>
   <div>
-    <app-about-me></app-about-me>
-    <app-testimonials></app-testimonials>
+    <app-about-me id="about-me"></app-about-me>
+    <app-testimonials id="testimonials"></app-testimonials>
   </div>
 </div>
 

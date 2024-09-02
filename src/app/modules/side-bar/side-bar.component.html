@@ -1,7 +1,7 @@
 <div class="menu">
   <ul>
     <li *ngFor="let section of sections" class="collection-item">
-      <fa-icon class="icon-gradient" [icon]="section.icon"></fa-icon>
+      <fa-icon (click)="scrollToSection(section.link)" class="icon-gradient" [icon]="section.icon"></fa-icon>
     </li>
   </ul>
 </div>

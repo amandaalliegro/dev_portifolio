@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { faChessQueen, faComments, faEnvelope, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-side-bar',
@@ -10,23 +10,32 @@ export class SideBarComponent {
     {
       icon: faChessQueen,
       title: "About Me",
-      link: ""
-    },
-    {
-      icon: faComments,
-      title: "Recommendations",
-      link: ""
+      link: "header"
     },
     {
       icon: faLayerGroup,
       title: "Technologies",
-      link: ""
+      link: "about-me"
+    },
+    {
+      icon: faComments,
+      title: "Recommendations",
+      link: "testimonials"
     },
     {
       icon: faEnvelope,
       title: "Contact",
-      link: ""
+      link: "contact"
     }
-
   ]
+
+
+  @Output() navigateTo = new EventEmitter<string>();
+
+
+
+  scrollToSection(section: string) {
+    console.log(section)
+    this.navigateTo.emit(section);
+  }
 }

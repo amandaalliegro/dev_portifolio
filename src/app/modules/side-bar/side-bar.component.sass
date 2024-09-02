@@ -17,11 +17,14 @@ $gradient: linear-gradient(120deg, $gradient-start, $gradient-end)
   background-color: #311b92
   padding: 4px
   margin-top: 15px
+  position: fixed
+  z-index: 40
 
   @include responsive('tablet')
     width: 100%
     margin-top: 0px
     border-radius: 0
+    background-color: rgb(49, 27, 146, 0.4)
 
 .menu ul
   list-style-type: none
@@ -43,3 +46,4 @@ $gradient: linear-gradient(120deg, $gradient-start, $gradient-end)
   line-height: 1
   text-align: center
   font-size: 30px
+  cursor: pointer

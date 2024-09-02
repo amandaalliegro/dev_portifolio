@@ -33,6 +33,10 @@
     transition: z-index 0s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease // Separate z-index transition
     background: linear-gradient(to right, rgba(89, 0, 255), rgb(154, 153, 244))
 
+    @include responsive('mobile')
+      left: 37%
+      width: 60%
+
 
 .pic-text-header
   display: flex
