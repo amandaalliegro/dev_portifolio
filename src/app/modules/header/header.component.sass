@@ -109,3 +109,20 @@ h6
 
 a
   color: white
+
+.typing
+  font-size: 2.5rem
+  font-weight: bold
+  white-space: nowrap
+  overflow: hidden
+  border-right: 3px solid
+  animation: caret 0.7s steps(1) infinite
+
+  @keyframes caret
+    50%
+      border-color: transparent
+
+  @include responsive('tablet')
+    font-size: calc(1.375rem + 1.5vw)
+
+
