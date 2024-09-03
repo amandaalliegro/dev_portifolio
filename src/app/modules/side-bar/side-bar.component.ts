@@ -1,5 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { ModalService } from '../../services/modal.service';
 import { faChessQueen, faComments, faEnvelope, faLayerGroup } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
@@ -27,15 +29,18 @@ export class SideBarComponent {
       title: "Contact",
       link: "contact"
     }
-  ]
-
+  ];
 
   @Output() navigateTo = new EventEmitter<string>();
 
-
+  constructor(private modalService: ModalService) {}
 
   scrollToSection(section: string) {
-    console.log(section)
-    this.navigateTo.emit(section);
+    if (section === 'contact') {
+      console.log(section)
+      this.modalService.open();
+    } else {
+      this.navigateTo.emit(section);
+    }
   }
 }

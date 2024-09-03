@@ -1,1 +1,23 @@
-<p>contact-me works!</p>
+<div *ngIf="showModal" class="modal-backdrop">
+  <div class="modal-content">
+    <div class="contact-form-container">
+      <div class="contact-title">
+        <h1 class="white-title">Contact</h1>
+        <h1 class="purple-title">Me.</h1>
+      </div>
+      <div class="form">
+        <label for="name">What is your name?</label>
+        <input type="text" id="name" name="name" placeholder="Your name">
+
+        <label for="email">What is your email?</label>
+        <input type="email" id="email" name="email" placeholder="Your email">
+
+        <label for="message">Write your message here:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
+
+        <button (click)="submitForm()">Submit</button>
+      </div>
+    </div>
+    <button (click)="close()">Close</button>
+  </div>
+</div>
