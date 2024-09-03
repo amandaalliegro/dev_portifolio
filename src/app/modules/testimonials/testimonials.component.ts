@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
   selector: 'app-testimonials',
@@ -27,4 +28,12 @@ export class TestimonialsComponent {
     }
   ]
 
+  constructor(
+    private modalService: ModalService
+   ){
+  }
+
+  openModal() {
+    this.modalService.open()
+  }
 }

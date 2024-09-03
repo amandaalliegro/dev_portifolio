@@ -15,7 +15,7 @@
 <div class="hire">
   <h2 class="lets-title">Let's work together!</h2>
   <h5>Building trust is at the heart of every successful partnership. As your dedicated development partner, I prioritize your vision and protect your intellectual property with the utmost care. Let's create something exceptional together.</h5>
-  <button>HIRE ME</button>
+  <button (click)="openModal()" >HIRE ME</button>
   <div class="personal-info">
     <i class="fa-solid fa-chess-queen"></i>
     <h6>Designed and Developed by:</h6>
@@ -26,7 +26,7 @@
     </a>
     <h6>Say hello:</h6>
     <div class="icons">
-      <i class="fa-solid fa-envelope"></i>
+      <i (click)="openModal()" class="fa-solid fa-envelope"></i>
       <a href="https://www.linkedin.com/in/amandaarnautalliegro/" target="_blank">
         <i class="fa-brands fa-linkedin"></i>
       </a>

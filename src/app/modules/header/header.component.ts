@@ -10,7 +10,8 @@ export class HeaderComponent implements AfterViewInit {
     'Full Stack Developer',
     'Front End Developer',
     'Graphic Designer',
-    'UI/UX Designer'
+    'UI/UX Designer',
+    'Software Developer'
   ];
   phraseIndex: number = 0;
   charIndex: number = 0;
