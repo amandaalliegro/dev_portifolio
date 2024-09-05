@@ -24,7 +24,7 @@
   z-index: 4 // Default z-index
 
   &.expanded
-    z-index: 10 // Bring the card to the front immediately
+    z-index: 50 // Bring the card to the front immediately
     position: fixed
     top: 50%
     left: 50%
@@ -39,9 +39,11 @@
 
 
     @include responsive('mobile')
+      position: fixed
       height: 59vh 
       left: 48%
       width: 90%
+      padding-bottom: 40px
       
 
 
