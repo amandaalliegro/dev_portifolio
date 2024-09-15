@@ -1,0 +1,24 @@
+<div class="watch-container">
+  <div class="work-watch">
+    <div class="commit">
+      <i class="fa-solid fa-code-commit"></i>
+      <div *ngIf="errorMessage; else commitCount">
+        {{ errorMessage }}
+      </div>
+      <ng-template #commitCount>
+        <h6>Total Commits:</h6>
+        <h3>{{ animatedCommits }}</h3>
+      </ng-template>
+    </div>
+    <div *ngIf="totalAdded > 0" class="added">
+      <i class="fa-solid fa-plus"></i>
+      <h6>Total Lines of Code Added:</h6>
+      <h3>{{ animatedAdded }}</h3>
+    </div>
+    <div *ngIf="totalDeleted < 0" class="deleted">
+      <i class="fa-solid fa-minus"></i>
+      <h6>Total Lines of Code Deleted:</h6>
+      <h3>{{ animatedDeleted }}</h3>
+    </div>
+  </div>
+</div>

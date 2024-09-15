@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { AboutMeComponent } from './modules/about-me/about-me.component';
 import { TestimonialsComponent } from './modules/testimonials/testimonials.component';
 import { TestimonialsCardComponent } from './partials/testimonials-card/testimonials-card.component';
 import { ContactMeComponent } from './partials/contact-me/contact-me.component';
+import { WorkDisplayComponent } from './modules/work-display/work-display.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { ContactMeComponent } from './partials/contact-me/contact-me.component';
     AboutMeComponent,
     TestimonialsComponent,
     TestimonialsCardComponent,
-    ContactMeComponent
+    ContactMeComponent,
+    WorkDisplayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

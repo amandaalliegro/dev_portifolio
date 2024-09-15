@@ -19,18 +19,18 @@
   flex: 1 1 calc(33.333% - 20px)
   max-width: 100%
   min-height: 300px
-  position: relative // Create a positioning context for the .fa-plus icon
+  position: relative 
   transition: height 0.3s ease, top 0.3s ease, left 0.3s ease
-  z-index: 4 // Default z-index
+  z-index: 4 
 
   &.expanded
-    z-index: 50 // Bring the card to the front immediately
+    z-index: 50 
     position: fixed
     top: 50%
     left: 50%
     width: 50%
-    transform: translate(-50%, -50%) // Center the card on the screen
-    transition: z-index 0s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease // Separate z-index transition
+    transform: translate(-50%, -50%) 
+    transition: z-index 0s ease, height 0.3s ease, top 0.3s ease, left 0.3s ease 
     background: linear-gradient(to right, rgba(89, 0, 255), rgb(154, 153, 244))
 
     @include responsive('tablet')
@@ -85,8 +85,8 @@
 
 .fa-plus
   position: absolute // Position relative to .testimonial-card
-  bottom: 10px // 10px from the bottom of the .testimonial-card
-  right: 10px // 10px from the right side of the .testimonial-card
+  bottom: 10px 
+  right: 10px 
   font-size: 25px
   color: #ff7e39
   cursor: pointer

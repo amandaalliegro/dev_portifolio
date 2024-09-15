@@ -1,0 +1,64 @@
+@mixin responsive($breakpoint)
+  @if $breakpoint == 'tablet'
+    @media (max-width: 991px)
+      @content
+  @else if $breakpoint == 'mobile'
+    @media (max-width: 480px)
+      @content
+  
+.watch-container
+  display: flex
+  justify-content: center
+  align-content: center
+  width: 100vw
+  
+.work-watch
+  display: flex
+  justify-content: space-evenly
+  align-content: center
+  width: 75vw
+  height: 25vh
+  background: linear-gradient(to right, rgba(89, 0, 255, .6), rgb(154, 153, 244, 0.4))
+  border-radius: 10px
+  border: 2px solid #7148eb
+  margin-bottom: 20px 
+
+  @include responsive(tablet)
+    width: 95vw
+    margin-bottom: 80px
+
+  @include responsive(mobile)
+    display: block
+    height: 90vh
+    width: 80vw
+    margin-bottom: 150px
+  
+  h3
+    color:#f9f7ff
+  
+  h6
+    color:#d7c9ff
+
+.fa-code-commit, 
+.fa-plus,
+.fa-minus 
+  color: #a688ff 
+  font-size: 75px
+  margin: 20px 0
+
+  @include responsive(tablet)
+    font-size: 60px
+  @include responsive(mobile)
+    font-size: 75px
+
+.commit,
+.added,
+.deleted 
+  display: flex
+  flex-direction: column  
+  align-items: center
+  align-content: center
+  justify-content: center
+
+  @include responsive(mobile)
+    margin: 40px 0
