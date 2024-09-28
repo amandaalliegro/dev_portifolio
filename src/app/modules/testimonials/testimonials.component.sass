@@ -37,8 +37,9 @@
 
     @include responsive('tablet')
       position: absolute
-      top: -8%
+      top: -5%
       left: 50%
+      width: 100%
       transform: translateX(-50%) translateY(0)
       transform-origin: center center
       white-space: normal
@@ -140,6 +141,19 @@ button
   width: 70% 
   margin-left: 55px
 
+  @include responsive('tablet')
+    width: 100% // Adjust as needed for centralization
+    display: flex
+    flex-direction: column
+    margin-bottom: 20px // Add space between cards
+    margin-left: 0px
+    justify-content: space-around
+    transform: translateX(7%) translateY(0)
+
 .testimonial-card
   flex: 0 0 auto /* Prevent cards from shrinking or growing */
   width: 40% /* Adjust this width based on how many cards you want visible at once */
+
+  @include responsive('tablet')
+    width: 90% // Adjust as needed for centralization
+    margin-bottom: 10px // Add space between cards
