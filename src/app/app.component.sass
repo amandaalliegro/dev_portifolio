@@ -10,7 +10,6 @@
 .container-wrap
   padding: 0  0 0px 15px
   background-color: #303030
-  gap: 50px
 
   @include responsive('tablet')
     padding: 0
@@ -21,3 +20,29 @@
 .row
   display: flex
   box-sizing: inherite
+
+/* Webkit Browsers */
+::-webkit-scrollbar 
+  width: 8px
+  height: 8px
+
+
+::-webkit-scrollbar-track 
+  background: #434343
+  border-radius: 10px
+
+
+::-webkit-scrollbar-thumb 
+  background: rgba(89, 0, 255, .6)
+  border-radius: 10px
+
+
+::-webkit-scrollbar-thumb:hover 
+  background: rgba(89, 0, 255, .8)
+
+
+/* Firefox */
+html 
+  scrollbar-width: thin
+  scrollbar-color: rgba(89, 0, 255, .6) #434343
+
