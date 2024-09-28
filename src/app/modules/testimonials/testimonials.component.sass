@@ -45,13 +45,38 @@
       white-space: normal
       text-align: center
 
+.shade-left
+  position: absolute
+  left: 13%
+  top: 0
+  width: 85px
+  height: 100%
+  background: rgb(48,48,48)
+  background: linear-gradient(90deg, rgba(48,48,48,1) 35%, rgba(48,48,48,0.85) 52%, rgba(48,48,48,0.7) 62%, rgba(48,48,48,0.4) 85%, rgba(48,48,48,0.004) 100%)
+  z-index: 10
+  pointer-events: none /* Allow clicks to pass through to testimonials-cards */
+
+.shade-right
+  position: absolute
+  right: 10%
+  top: 0
+  width: 105px
+  height: 100%
+  background: rgb(48,48,48)
+  background: linear-gradient(-90deg, rgba(48,48,48,1) 35%, rgba(48,48,48,0.85) 52%, rgba(48,48,48,0.7) 62%, rgba(48,48,48,0.4) 85%, rgba(48,48,48,0.004) 100%)
+  z-index: 10
+  pointer-events: none /* Allow clicks to pass through to testimonials-cards */
+
+
 .testimonial-card
-  width: 100%
-  padding: 20px
-  flex: 0 1 calc(33.333% - 20px) // Three cards per row with gap consideration
-  box-sizing: border-box
   display: flex
-  flex-direction: column
+  flex-wrap: nowrap /* Prevent wrapping to keep them in a single row */
+  justify-content: flex-start /* Align cards to the left */
+  overflow-x: auto /* Allows horizontal scrolling */
+  width: 70%
+  margin-left: 55px
+  position: relative
+  z-index: 5 /* Place testimonials-cards behind the gradient */
 
   @include responsive('tablet')
     width: 80% // Adjust as needed for centralization
@@ -138,8 +163,10 @@ button
   flex-wrap: nowrap /* Prevent wrapping to keep them in a single row */
   justify-content: space-between /* Distribute space evenly between cards */
   overflow-x: auto /* Allows horizontal scrolling if needed */
-  width: 70% 
+  width: 75% 
   margin-left: 55px
+  padding-right: 85px
+  padding-left: 10px 
 
   @include responsive('tablet')
     width: 100% // Adjust as needed for centralization
