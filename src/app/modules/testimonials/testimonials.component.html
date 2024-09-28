@@ -1,16 +1,18 @@
 <div class="testimonials row">
   <h3>Words from Colleagues</h3>
-  <app-testimonials-card
-    *ngFor="let testimonial of testimonials"
-    class="col-lg-4 testimonial-card"
-    [name]="testimonial.name"
-    [job]="testimonial.job"
-    [date]="testimonial.date"
-    [company]="testimonial.company"
-    [text]="testimonial.text"
-    [best]="testimonial.best"
-    [picture]="testimonial.picture"
-  ></app-testimonials-card>
+  <div class="testimonials-cards">
+    <app-testimonials-card
+      *ngFor="let testimonial of testimonials"
+      class="col-lg-4 testimonial-card"
+      [name]="testimonial.name"
+      [job]="testimonial.job"
+      [date]="testimonial.date"
+      [company]="testimonial.company"
+      [text]="testimonial.text"
+      [best]="testimonial.best"
+      [picture]="testimonial.picture"
+    ></app-testimonials-card>
+  </div>
 </div>
 <div class="hire">
   <h2 class="lets-title">Let's work together!</h2>

@@ -16,6 +16,7 @@
   justify-content: center
   position: relative
   align-items: stretch
+  width: 100vw 
 
   @include responsive('tablet')
     flex-direction: column // Stack items vertically
@@ -25,12 +26,14 @@
     position: absolute
     left: 15%
     top: 94%
+    width: 10% 
     color: #c4c4c4
     transform: translateY(-50%) rotate(-90deg)
     transform-origin: left center
     white-space: nowrap
     margin: 0
     padding: 10px 0
+    margin-right: 20px
 
     @include responsive('tablet')
       position: absolute
@@ -129,4 +132,14 @@ button
   cursor: pointer
   text-align: center // Center align text within the button
 
+.testimonials-cards
+  display: flex
+  flex-wrap: nowrap /* Prevent wrapping to keep them in a single row */
+  justify-content: space-between /* Distribute space evenly between cards */
+  overflow-x: auto /* Allows horizontal scrolling if needed */
+  width: 70% 
+  margin-left: 55px
 
+.testimonial-card
+  flex: 0 0 auto /* Prevent cards from shrinking or growing */
+  width: 40% /* Adjust this width based on how many cards you want visible at once */
