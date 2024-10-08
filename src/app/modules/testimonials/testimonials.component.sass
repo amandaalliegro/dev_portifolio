@@ -77,7 +77,7 @@
   width: 105px
   height: 100%
   background: rgb(48,48,48)
-  background: linear-gradient(-90deg, rgba(48,48,48,1) 35%, rgba(48,48,48,0.85) 52%, rgba(48,48,48,0.7) 62%, rgba(48,48,48,0.4) 85%, rgba(48,48,48,0.004) 100%)
+  background: linear-gradient(-90deg, rgba(48,48,48,1) 35%, rgba(48,48,48,0.7) 52%, rgba(48,48,48,0.5) 62%, rgba(48,48,48,0.2) 85%,rgba(48,48,48,0.09) 89%, rgba(48,48,48,0.00) 100%)
   z-index: 10
   pointer-events: none /* Allow clicks to pass through to testimonials-cards */
 
@@ -87,29 +87,29 @@
 
 .testimonial-card
   display: flex
-  flex-wrap: nowrap /* Prevent wrapping to keep them in a single row */
-  justify-content: flex-start /* Align cards to the left */
-  overflow-x: auto /* Allows horizontal scrolling */
+  flex-wrap: nowrap 
+  justify-content: flex-start 
+  overflow-x: auto 
   width: 70%
   margin-left: 55px
   position: relative
 
   @include responsive('tablet')
-    width: 80% // Adjust as needed for centralization
-    margin-bottom: 20px // Add space between cards
+    width: 80% 
+    margin-bottom: 20px 
     margin-left: 30px
     
     @include responsive('mobile')
-    width: 100% // Adjust as needed for centralization
-    margin-bottom: 20px // Add space between cards
+    width: 100% 
+    margin-bottom: 20px 
     margin-left: 10px
 
 .hire
-  display: flex // Use flexbox for centering
-  flex-direction: column // Stack the h6 and button vertically
-  align-items: center // Center items horizontally
-  justify-content: center // Center items vertically
-  text-align: center // Center align the text in the container
+  display: flex 
+  flex-direction: column 
+  align-items: center 
+  justify-content: center 
+  text-align: center 
 
   h5
     color: white
