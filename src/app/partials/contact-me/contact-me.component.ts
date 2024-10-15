@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ModalService } from '../../services/modal.service';
+import { Requests } from 'src/app/services/requests.service';
 
 @Component({
   selector: 'app-contact-me',
@@ -8,26 +9,43 @@ import { ModalService } from '../../services/modal.service';
   styleUrls: ['./contact-me.component.sass']
 })
 export class ContactMeComponent implements OnInit, OnDestroy {
+  name: string = '';
+  email: string = '';
+  message: string = '';
   showModal: boolean = false;
   private modalSubscription: Subscription = new Subscription;
+  data: any;
 
-  constructor(private modalService: ModalService) {}
+  constructor(
+    private modalService: ModalService,
+    private requestsService: Requests
+    ) {}
 
   ngOnInit() {
-    console.log("ContactMeComponent: Initializing and subscribing to modal changes.");
     this.modalSubscription = this.modalService.watch().subscribe((status: boolean) => {
       this.showModal = status;
-      console.log("ContactMeComponent: Modal status changed to ", status); // Confirm subscription is working
     });
   }
 
   submitForm(){
-    
+    const messageData = {
+      name: this.name,
+      email: this.email,
+      message: this.message,
+    };
+
+    this.requestsService.sendMessage(messageData).subscribe((response) => {
+      this.showModal = false;
+    },
+    (error) => {
+      console.error('Error sending message', error);
+      this.showModal = false;
+    }
+    )
   }
 
   ngOnDestroy() {
     this.modalSubscription.unsubscribe();
-    console.log("ContactMeComponent: Unsubscribed from modal changes.");
   }
 
   close() {

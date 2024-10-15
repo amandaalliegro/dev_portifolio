@@ -7,17 +7,14 @@
         <h1 class="purple-title">Me.</h1>
       </div>
       <div class="form">
-        <form action="https://public.herotofu.com/v1/80314080-6a64-11ef-ac86-0dfc96ef4036" method="POST" accept-charset="UTF-8" name="EmailForm">
+        <form (ngSubmit)="submitForm()">
           <label for="name">What is your name?</label>
-          <input type="text" id="name" size="19" name="name" required placeholder="Your name">
-
+          <input [(ngModel)]="name" type="text" id="name" size="19" name="name" required placeholder="Your name">
           <label for="email">What is your email?</label>
-          <input type="email" id="email" name="email" required placeholder="Your email">
-
+          <input [(ngModel)]="email" type="email" id="email" name="email" required placeholder="Your email">
           <label for="message">Write your message here:</label>
-          <textarea id="message" name="message" rows="4" placeholder="Your message"></textarea>
-
-          <button (click)="submitForm()">Submit</button>
+          <textarea [(ngModel)]="message" id="message" name="message" rows="4" placeholder="Your message"></textarea>
+          <button type="submit">Submit</button>
         </form>  
       </div>
     </div>
